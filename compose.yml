@@ -28,17 +28,10 @@ services:
     deploy:
       replicas: 2
     ports:
-      - "5004:5003"
+      - "5003:5003"
     networks:
       - vikram
-  frontend:
-    image: frontend-image
-    deploy:
-      replicas: 2
-    ports:
-      - "5004:5003"
-    networks:
-      - vikram
+  
   frontend:
     image: frontend-image
     deploy:
@@ -51,4 +44,4 @@ services:
 
   networks:
     vikram:
-      driver: bridge
+      driver: overlay
